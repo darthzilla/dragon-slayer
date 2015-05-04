@@ -1,0 +1,9 @@
+c:\users\stefan\documents\visual studio 2013\Projects\dragon-slayer\dragon-slayer\bin\Debug\dragon-slayer.exe.config
+c:\users\stefan\documents\visual studio 2013\Projects\dragon-slayer\dragon-slayer\bin\Debug\dragon-slayer.exe
+c:\users\stefan\documents\visual studio 2013\Projects\dragon-slayer\dragon-slayer\bin\Debug\dragon-slayer.pdb
+c:\users\stefan\documents\visual studio 2013\Projects\dragon-slayer\dragon-slayer\obj\Debug\dragon-slayer.csprojResolveAssemblyReference.cache
+c:\users\stefan\documents\visual studio 2013\Projects\dragon-slayer\dragon-slayer\obj\Debug\dragon_slayer.Form1.resources
+c:\users\stefan\documents\visual studio 2013\Projects\dragon-slayer\dragon-slayer\obj\Debug\dragon_slayer.Properties.Resources.resources
+c:\users\stefan\documents\visual studio 2013\Projects\dragon-slayer\dragon-slayer\obj\Debug\dragon-slayer.csproj.GenerateResource.Cache
+c:\users\stefan\documents\visual studio 2013\Projects\dragon-slayer\dragon-slayer\obj\Debug\dragon-slayer.exe
+c:\users\stefan\documents\visual studio 2013\Projects\dragon-slayer\dragon-slayer\obj\Debug\dragon-slayer.pdb

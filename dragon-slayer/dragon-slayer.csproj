@@ -53,6 +53,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="GameManager.cs" />
+    <Compile Include="Hero.cs" />
     <Compile Include="Level.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -84,6 +85,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\level1bg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marko.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

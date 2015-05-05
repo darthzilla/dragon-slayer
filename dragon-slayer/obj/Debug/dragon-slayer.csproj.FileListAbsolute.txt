@@ -7,3 +7,12 @@ c:\users\stefan\documents\visual studio 2013\Projects\dragon-slayer\dragon-slaye
 c:\users\stefan\documents\visual studio 2013\Projects\dragon-slayer\dragon-slayer\obj\Debug\dragon-slayer.csproj.GenerateResource.Cache
 c:\users\stefan\documents\visual studio 2013\Projects\dragon-slayer\dragon-slayer\obj\Debug\dragon-slayer.exe
 c:\users\stefan\documents\visual studio 2013\Projects\dragon-slayer\dragon-slayer\obj\Debug\dragon-slayer.pdb
+C:\Users\Risto\Documents\GitHub\dragon-slayer\dragon-slayer\bin\Debug\dragon-slayer.exe.config
+C:\Users\Risto\Documents\GitHub\dragon-slayer\dragon-slayer\obj\Debug\dragon-slayer.exe
+C:\Users\Risto\Documents\GitHub\dragon-slayer\dragon-slayer\obj\Debug\dragon-slayer.pdb
+C:\Users\Risto\Documents\GitHub\dragon-slayer\dragon-slayer\bin\Debug\dragon-slayer.exe
+C:\Users\Risto\Documents\GitHub\dragon-slayer\dragon-slayer\bin\Debug\dragon-slayer.pdb
+C:\Users\Risto\Documents\GitHub\dragon-slayer\dragon-slayer\obj\Debug\dragon-slayer.csprojResolveAssemblyReference.cache
+C:\Users\Risto\Documents\GitHub\dragon-slayer\dragon-slayer\obj\Debug\dragon_slayer.Form1.resources
+C:\Users\Risto\Documents\GitHub\dragon-slayer\dragon-slayer\obj\Debug\dragon_slayer.Properties.Resources.resources
+C:\Users\Risto\Documents\GitHub\dragon-slayer\dragon-slayer\obj\Debug\dragon-slayer.csproj.GenerateResource.Cache

@@ -14,13 +14,15 @@ namespace dragon_slayer
         public Size bounds { get; set; }
         public int health { get; set; }
         public int speed { get; set; }
-        public Character(Point location, Image sprite, Size bounds, int health,int speed)
+        public Direction direction { get; set; }
+        public Character(Point location, Image sprite, Size bounds, int health,int speed,Direction direction)
         {
             this.location = location;
             this.sprite = sprite;
             this.bounds = bounds;
             this.health = health;
             this.speed = speed;
+            this.direction = direction;
         }
 
         public abstract void Move(Direction dir,double dT);

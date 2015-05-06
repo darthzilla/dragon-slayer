@@ -12,15 +12,15 @@ namespace dragon_slayer
     {
         public static int pixelScale = 3;
 
+        public static int groundPoint = 576;
+
         Level level1;
 
-        Brush brush;
         public Character marko;
         public GameManager()
         {
             level1 = new Level(Resources.level1bg);
-            brush = new SolidBrush(Color.Red);
-            marko = new Hero(new Point(48, 576), Resources.marko, new Size(8 * pixelScale, 16 * pixelScale), 10,200);
+            marko = new Hero(new Point(48, groundPoint), Resources.marko, new Size(8 * pixelScale, 16 * pixelScale), 10,200,Direction.RIGHT);
         }
         public void Update()
         {

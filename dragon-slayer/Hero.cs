@@ -4,6 +4,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using dragon_slayer.Properties;
 
 namespace dragon_slayer
 {
@@ -11,9 +12,9 @@ namespace dragon_slayer
     {
         public Rectangle weapon { get; set; }
         public bool attackState { get; set; }
-        public Hero(Point location, Image sprite, Size bounds, int health,int speed) : base(location,sprite,bounds,health,speed) 
+        public Hero(Point location, Image sprite, Size bounds, int health,int speed,Direction direction) : base(location,sprite,bounds,health,speed,direction) 
         {
-            weapon = new Rectangle(location.X + 11 * GameManager.pixelScale, location.Y + 6 * GameManager.pixelScale, 10 * GameManager.pixelScale, 5 * GameManager.pixelScale);
+            weapon = WeaponUpdate(direction);
             attackState = false;
         }
         public override void Draw(Graphics g)
@@ -28,12 +29,29 @@ namespace dragon_slayer
             {
                 int newLoc = Convert.ToInt32(Math.Floor(location.X + 3 * speed * 0.016));
                 location = new Point(newLoc, location.Y);
+                weapon = WeaponUpdate(dir);
+                sprite = SpriteUpdate(dir);
             }
             else if (dir == Direction.LEFT)
             {
                 location = new Point(location.X - 3, location.Y);
+                weapon = WeaponUpdate(dir);
+                sprite = SpriteUpdate(dir);
             }
-            weapon = new Rectangle(location.X + 11 * GameManager.pixelScale, location.Y + 6 * GameManager.pixelScale, 10 * GameManager.pixelScale, 5 * GameManager.pixelScale);
+            
+        }
+        public Rectangle WeaponUpdate(Direction direction){
+            if(direction == Direction.RIGHT)
+                return new Rectangle(location.X + 11 * GameManager.pixelScale, location.Y + 6 * GameManager.pixelScale, 10 * GameManager.pixelScale, 5 * GameManager.pixelScale);
+            else return new Rectangle(location.X - 5 * GameManager.pixelScale, location.Y + 6 * GameManager.pixelScale, 10 * GameManager.pixelScale, 5 * GameManager.pixelScale);
+        }
+        public Image SpriteUpdate(Direction direction)
+        {
+            if (direction == Direction.RIGHT)
+            {
+                return Resources.marko;
+            }
+            else return Resources.marko_left;
         }
     }
 }

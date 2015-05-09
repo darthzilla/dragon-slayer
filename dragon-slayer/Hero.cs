@@ -30,7 +30,7 @@ namespace dragon_slayer
             jump = new Vector(0f, 50f);
             isJumping = false;
             isMoving = false;
-            isGrounded = true;
+            isGrounded = false;
             isPlatformed = false;
             plColNum = 0;
         }
@@ -79,21 +79,16 @@ namespace dragon_slayer
                 isPlatformed = false;
                 weapon = WeaponUpdate(direction);
             }
-            else if (!isPlatformed && !isGrounded)
-            {
-                float newLoc = location.Y + gravity.Y * 0.32f;
-                location = new Vector(location.X, newLoc);
-            }
 
         }
         //-------------------------------
-        //| FALL METHOD
+        //| GRAVITY METHOD
         //-------------------------------
-        public void Fall()
+        public void Gravity()
         {
-            if (!isPlatformed && !isGrounded)
+            if (!isGrounded && !isJumping)
             {
-                float newLoc = location.Y + gravity.Y * 0.32f;
+                float newLoc = location.Y + 15 * 0.32f;
                 location = new Vector(location.X, newLoc);
                 weapon = WeaponUpdate(direction);
             }
@@ -153,25 +148,22 @@ namespace dragon_slayer
                 {
                     if (location.X < p.location.X + p.bounds.Width &&
                            location.X + bounds.Width > p.location.X &&
-                           location.Y + 47 < p.location.Y + 8 &&
+                           location.Y + 47 < p.location.Y + 47 &&
                            bounds.Height + location.Y > p.location.Y)
                     {
+                        plColNum++;
                         isPlatformed = true;
                         isGrounded = true;
-                        if (plColNum == 1)
-                        {
-                            isJumping = false;
-                            jump = new Vector(0, 50f);
-                        }
+                        isJumping = false;
+                        jump = new Vector(0, 50f);
                         location.Y = p.location.Y - 47;
                         weapon = WeaponUpdate(direction);
-                        plColNum++;
+                        
                     }
                     else if (isPlatformed)
                     {
                         isPlatformed = false;
                         isGrounded = false;
-                        isJumping = true;
                         plColNum = 0;
                     }
                 }

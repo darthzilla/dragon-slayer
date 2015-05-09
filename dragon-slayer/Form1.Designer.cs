@@ -30,12 +30,18 @@
         {
             this.components = new System.ComponentModel.Container();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
+            this.hitTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // gameTimer
             // 
             this.gameTimer.Interval = 16;
             this.gameTimer.Tick += new System.EventHandler(this.gameTimer_Tick);
+            // 
+            // hitTimer
+            // 
+            this.hitTimer.Interval = 200;
+            this.hitTimer.Tick += new System.EventHandler(this.hitTimer_Tick);
             // 
             // Form1
             // 
@@ -46,6 +52,8 @@
             this.Text = "Dragon Slayer";
             this.Paint += new System.Windows.Forms.PaintEventHandler(this.Form1_Paint);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyUp);
             this.ResumeLayout(false);
 
         }
@@ -53,6 +61,7 @@
         #endregion
 
         public System.Windows.Forms.Timer gameTimer;
+        private System.Windows.Forms.Timer hitTimer;
 
     }
 }

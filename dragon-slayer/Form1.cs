@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -18,7 +19,7 @@ namespace dragon_slayer
     public partial class Form1 : Form
     {
         GameManager gm;
-        public double deltaTime;
+        public static float deltaTime = 0.016f;
         public Form1()
         {
             InitializeComponent();
@@ -27,14 +28,16 @@ namespace dragon_slayer
             Width = 1264;
             Height = 759;
             gameTimer.Enabled = true;
-            deltaTime = DateTime.Now.Second;
         }
 
         private void gameTimer_Tick(object sender, EventArgs e)
         {
             gm.Update();
+            if (gm.gameOver)
+            {
+                gm = new GameManager();
+            }
             Invalidate();
-            deltaTime = DateTime.Now.Second - deltaTime;
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -46,12 +49,46 @@ namespace dragon_slayer
         {
             if (e.KeyCode == Keys.Right)
             {
-                gm.marko.Move(Direction.RIGHT, deltaTime);
+                gm.marko.direction = Direction.RIGHT;
+                gm.marko.isMovingRight = true;
             }
-            else if(e.KeyCode == Keys.Left)
+            if (e.KeyCode == Keys.Left)
             {
-                gm.marko.Move(Direction.LEFT, deltaTime);
+                gm.marko.direction = Direction.LEFT;
+                gm.marko.isMovingLeft = true;
             }
+            if ((e.KeyCode == Keys.Space || e.KeyCode == Keys.X || e.KeyCode == Keys.Up) && !gm.marko.isJumping)
+            {
+                gm.marko.isJumping = true;
+            }
+            if (e.KeyCode == Keys.Z)
+            {
+                gm.marko.attackState = true;
+                hitTimer.Enabled = true;
+            }
+        }
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void Form1_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Right)
+            {
+                gm.marko.isMovingRight = false;
+            }
+            if (e.KeyCode == Keys.Left)
+            {
+                gm.marko.isMovingLeft = false;
+            }
+        }
+
+        private void hitTimer_Tick(object sender, EventArgs e)
+        {
+            gm.marko.attackState = false;
+            hitTimer.Enabled = false;
         }
     }
 }

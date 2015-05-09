@@ -14,14 +14,17 @@ namespace dragon_slayer
         public Image bg { get; set; }
 
         public List<Enemy> enemies { get; set; }
+        public List<Platform> platforms { get; set; }
         Random rng;
-        public Level(Image bg)
+        public Level(Image bg,List<Platform> platforms)
         {
             rng = new Random();
             rng.Next();
             this.bg = bg;
             floorBoundBox = new Rectangle(0, 624, 1248, 16 * GameManager.pixelScale);
-            enemies = new List<Enemy>();
+            this.enemies = new List<Enemy>();
+            this.platforms = new List<Platform>();
+            this.platforms = platforms;
             Enemy one = new Enemy(new Vector(rng.Next(300,1200), GameManager.groundPoint), Resources.cruela_l, new Size(8 * GameManager.pixelScale, 16 * GameManager.pixelScale), 10, Direction.LEFT);
             enemies.Add(one);
         }
@@ -36,6 +39,13 @@ namespace dragon_slayer
                     if(fiend.isAlive)
                         fiend.Draw(g);
                 }
+            if (platforms.Count > 0)
+            {
+                foreach (Platform p in platforms)
+                {
+                    p.Draw(g);
+                }
+            }
         }
     }
 }

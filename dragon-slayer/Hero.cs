@@ -19,6 +19,9 @@ namespace dragon_slayer
         public bool isGrounded { get; set; }
         public bool isMovingLeft { get; set; }
         public bool isMovingRight { get; set; }
+        public bool isPlatformed { get; set; }
+        public bool isFalling { get; set; }
+        public int plColNum { get; set; }
         public Hero(Vector location, Image sprite, Size bounds, int health,Direction direction) : base(location,sprite,bounds,health,direction) 
         {
             weapon = WeaponUpdate(direction);
@@ -28,6 +31,8 @@ namespace dragon_slayer
             isJumping = false;
             isMoving = false;
             isGrounded = true;
+            isPlatformed = false;
+            plColNum = 0;
         }
         //-------------------------------
         //| DRAW METHOD
@@ -71,9 +76,27 @@ namespace dragon_slayer
                 location = new Vector(location.X, newLoc);
                 jump = new Vector(jump.X, jump.Y - 0.32f * gravity.Y);
                 isGrounded = false;
+                isPlatformed = false;
                 weapon = WeaponUpdate(direction);
             }
+            else if (!isPlatformed && !isGrounded)
+            {
+                float newLoc = location.Y + gravity.Y * 0.32f;
+                location = new Vector(location.X, newLoc);
+            }
 
+        }
+        //-------------------------------
+        //| FALL METHOD
+        //-------------------------------
+        public void Fall()
+        {
+            if (!isPlatformed && !isGrounded)
+            {
+                float newLoc = location.Y + gravity.Y * 0.32f;
+                location = new Vector(location.X, newLoc);
+                weapon = WeaponUpdate(direction);
+            }
         }
         //-------------------------------
         //| WEAPON COLLIDER UPDATE METHOD
@@ -122,9 +145,37 @@ namespace dragon_slayer
         //-------------------------------
         //| PLATFORM COLLISION CHECK
         //-------------------------------
-        public void PlatformCheck()
+        public void PlatformCheck(List<Platform> colPlt)
         {
-
+            if (colPlt.Count > 0)
+            {
+                foreach (Platform p in colPlt)
+                {
+                    if (location.X < p.location.X + p.bounds.Width &&
+                           location.X + bounds.Width > p.location.X &&
+                           location.Y + 47 < p.location.Y + 8 &&
+                           bounds.Height + location.Y > p.location.Y)
+                    {
+                        isPlatformed = true;
+                        isGrounded = true;
+                        if (plColNum == 1)
+                        {
+                            isJumping = false;
+                            jump = new Vector(0, 50f);
+                        }
+                        location.Y = p.location.Y - 47;
+                        weapon = WeaponUpdate(direction);
+                        plColNum++;
+                    }
+                    else if (isPlatformed)
+                    {
+                        isPlatformed = false;
+                        isGrounded = false;
+                        isJumping = true;
+                        plColNum = 0;
+                    }
+                }
+            }
         }
         //-------------------------------
         //| ENEMY COLLISION CHECK

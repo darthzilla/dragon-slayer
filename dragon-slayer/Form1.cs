@@ -40,6 +40,7 @@ namespace dragon_slayer
             }
             gm.marko.UpdateAnimState();
             Invalidate();
+            Exit();
         }
 
         private void Form1_Paint(object sender, PaintEventArgs e)
@@ -101,6 +102,37 @@ namespace dragon_slayer
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+        //-------------------------------
+        //| CHECK IF ABLE TO PROGRESS
+        //-------------------------------
+        public void Exit()
+        {
+            if (gm.marko.location.X >= 1200 && gm.marko.location.Y >= 524)
+            {
+                foreach (Enemy e in gm.levels.ElementAt(gm.currentLevel).enemies)
+                {
+                    if (e.isAlive)
+                        return;
+                }
+                if (gm.currentLevel < gm.levels.Count - 1)
+                    gm.NextLevel();
+                else
+                {
+                    this.Close();
+                    DialogResult dir = MessageBox.Show("You won! \n Do you want to play again?","Winning is awesome",MessageBoxButtons.YesNo,MessageBoxIcon.Information);
+                    if (dir == System.Windows.Forms.DialogResult.Yes)
+                    {
+                        Form1 form1 = new Form1();
+                        form1.Show();
+                    }
+                    else if (dir == System.Windows.Forms.DialogResult.No)
+                    {
+                        StartingForm sForm = new StartingForm();
+                        sForm.Show();
+                    }
+                }
+            }
         }
     }
 }

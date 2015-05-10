@@ -54,14 +54,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="dragon-slayer.exe" size="87976">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="dragon-slayer.exe" size="89000">
       <assemblyIdentity name="dragon-slayer" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>jBCW4OKzoHiQ4z8IprBwcQv4y92xbL0AUFDoSaRT0Q0=</dsig:DigestValue>
+        <dsig:DigestValue>8am3MBvLummRnuJtnZnQbUZpQ4FpDx+g84+U1K4LGHM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

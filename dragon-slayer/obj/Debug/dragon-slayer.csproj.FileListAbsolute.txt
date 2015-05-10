@@ -25,3 +25,10 @@ C:\Users\Stefan\Documents\GitHub\dragon-slayer\dragon-slayer\obj\Debug\dragon-sl
 C:\Users\Stefan\Documents\GitHub\dragon-slayer\dragon-slayer\obj\Debug\dragon_slayer.Form1.resources
 C:\Users\Stefan\Documents\GitHub\dragon-slayer\dragon-slayer\obj\Debug\dragon_slayer.Properties.Resources.resources
 C:\Users\Stefan\Documents\GitHub\dragon-slayer\dragon-slayer\obj\Debug\dragon-slayer.csproj.GenerateResource.Cache
+C:\Users\Risto\Documents\GitHub\dragon-slayer\dragon-slayer\obj\Debug\dragon_slayer.StartingForm.resources
+C:\Users\Risto\Documents\GitHub\dragon-slayer\dragon-slayer\bin\Debug\Interop.AcroPDFLib.dll
+C:\Users\Risto\Documents\GitHub\dragon-slayer\dragon-slayer\bin\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Risto\Documents\GitHub\dragon-slayer\dragon-slayer\obj\Debug\Interop.AcroPDFLib.dll
+C:\Users\Risto\Documents\GitHub\dragon-slayer\dragon-slayer\obj\Debug\AxInterop.AcroPDFLib.dll
+C:\Users\Risto\Documents\GitHub\dragon-slayer\dragon-slayer\obj\Debug\dragon-slayer.csproj.ResolveComReference.cache
+C:\Users\Risto\Documents\GitHub\dragon-slayer\dragon-slayer\obj\Debug\dragon_slayer.howToForm.resources

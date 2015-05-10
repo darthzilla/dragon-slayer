@@ -70,3 +70,16 @@ public void Gravity()
       }
   }
 ```
+# Screenshots и кратко упатство
+- <b>Прво ниво</b>
+</br>
+</br>
+<img src="http://puu.sh/hIGB7/5a341a8bfe.png" alt="level1" />
+- <b>Второ ниво</b>
+</br>
+</br>
+<img src="http://puu.sh/hIGzG/392c66ca15.png" alt="level2" />
+- <b>Упатство</b>
+</br>
+</br>
+<img src="http://puu.sh/hIGyp/21467f5fa9.png" alt="How to play" />

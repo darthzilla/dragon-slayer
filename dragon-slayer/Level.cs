@@ -15,18 +15,21 @@ namespace dragon_slayer
 
         public List<Enemy> enemies { get; set; }
         public List<Platform> platforms { get; set; }
-        Random rng;
-        public Level(Image bg,List<Platform> platforms)
+        public List<Wall> walls { get; set; }
+
+        public Rectangle exit { get; set; }
+
+        public Level(Image bg,List<Platform> platforms, List<Wall> walls, List<Enemy> enemies)
         {
-            rng = new Random();
-            rng.Next();
             this.bg = bg;
             floorBoundBox = new Rectangle(0, 624, 1248, 16 * GameManager.pixelScale);
             this.enemies = new List<Enemy>();
             this.platforms = new List<Platform>();
             this.platforms = platforms;
-            Enemy one = new Enemy(new Vector(rng.Next(300,1200), GameManager.groundPoint), Resources.cruela_l, new Size(8 * GameManager.pixelScale, 16 * GameManager.pixelScale), 10, Direction.LEFT);
-            enemies.Add(one);
+            this.walls = new List<Wall>();
+            this.walls = walls;
+            this.enemies = enemies;
+            exit = new Rectangle(1200, (int)GameManager.groundPoint, GameManager.unit, GameManager.unit);
         }
 
         public void Draw(Graphics g)
@@ -44,6 +47,10 @@ namespace dragon_slayer
                 foreach (Platform p in platforms)
                 {
                     p.Draw(g);
+                }
+                foreach (Wall w in walls)
+                {
+                    w.Draw(g);
                 }
             }
         }

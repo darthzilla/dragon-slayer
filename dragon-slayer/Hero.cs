@@ -53,6 +53,7 @@ namespace dragon_slayer
         //-------------------------------
         public override void Move()
         {
+            speed = 150;
             if (direction == Direction.RIGHT && isMoving)
             {
                 float newLoc = location.X + speed * GameManager.pixelScale * 0.016f;
@@ -99,8 +100,8 @@ namespace dragon_slayer
         //-------------------------------
         public Rectangle WeaponUpdate(Direction direction){
             if(direction == Direction.RIGHT)
-                return new Rectangle((int)location.X + 11 * GameManager.pixelScale, (int)location.Y + 6 * GameManager.pixelScale, 4 * GameManager.pixelScale, 5 * GameManager.pixelScale);
-            else return new Rectangle((int)location.X + 1 * GameManager.pixelScale, (int)location.Y + 6 * GameManager.pixelScale, 4 * GameManager.pixelScale, 5 * GameManager.pixelScale);
+                return new Rectangle((int)location.X + 11 * GameManager.pixelScale, (int)location.Y + 6 * GameManager.pixelScale, 7 * GameManager.pixelScale, 5 * GameManager.pixelScale);
+            else return new Rectangle((int)location.X - 8 * GameManager.pixelScale, (int)location.Y + 6 * GameManager.pixelScale, 7 * GameManager.pixelScale, 5 * GameManager.pixelScale);
         }
         //-------------------------------
         //| SPRITE UPDATE METHOD
@@ -286,11 +287,12 @@ namespace dragon_slayer
                 foreach (Platform p in colPlt)
                 {
                     if (location.X < p.location.X + p.bounds.Width &&
-                           location.X + bounds.Width > p.location.X &&
+                           location.X + bounds.Width + 8 > p.location.X &&
                            location.Y + 47 < p.location.Y + 47 &&
                            bounds.Height + location.Y > p.location.Y)
                     {
                         isPlatformed = true;
+                        p.isOnThis = true;
                         isGrounded = true;
                         isJumping = false;
                         jump = new Vector(0, 50f);
@@ -298,10 +300,11 @@ namespace dragon_slayer
                         weapon = WeaponUpdate(direction);
                         
                     }
-                    else if (isPlatformed)
+                    else if (isPlatformed && p.isOnThis)
                     {
                         isPlatformed = false;
                         isGrounded = false;
+                        p.isOnThis = false;
                     }
                 }
             }
@@ -314,13 +317,27 @@ namespace dragon_slayer
             if(colDec.Count > 0)
                 foreach(Enemy fiend in colDec){
                     if(attackState)
-                        if (weapon.X < fiend.location.X + fiend.bounds.Width &&
-                           weapon.X + weapon.Width > fiend.location.X &&
-                           weapon.Y < fiend.location.Y + fiend.bounds.Height &&
-                           weapon.Height + weapon.Y > fiend.location.Y)
+                        if (direction == Direction.RIGHT)
                         {
-                            //weapon collision
-                            fiend.isAlive = false;
+                            if (weapon.X < fiend.location.X + fiend.bounds.Width &&
+                               weapon.X + weapon.Width > fiend.location.X &&
+                               weapon.Y < fiend.location.Y + fiend.bounds.Height &&
+                               weapon.Height + weapon.Y > fiend.location.Y)
+                            {
+                                //weapon collision
+                                fiend.isAlive = false;
+                            }
+                        }
+                        else if (direction == Direction.LEFT)
+                        {
+                            if (fiend.location.X < weapon.X + weapon.Width &&
+                              fiend.location.X + fiend.bounds.Width > weapon.X &&
+                               weapon.Y < fiend.location.Y + fiend.bounds.Height &&
+                               weapon.Height + weapon.Y > fiend.location.Y)
+                            {
+                                //weapon collision
+                                fiend.isAlive = false;
+                            }
                         }
                     if (location.X < fiend.location.X + fiend.bounds.Width &&
                        location.X + bounds.Width > fiend.location.X &&
@@ -333,6 +350,47 @@ namespace dragon_slayer
                     }
                 }
             return false;
+        }
+        //-------------------------------
+        //| WALL COLLISION CHECK
+        //-------------------------------
+        public void WallCheck(List<Wall> colWall){
+            if (colWall.Count > 0)
+            {
+                foreach (Wall w in colWall)
+                {
+                    if (location.X + 46 >= w.location.X &&
+                        location.X + 46 <= w.location.X + 16 &&
+                        bounds.Height + location.Y > w.location.Y)
+                    {
+                        location.X = w.location.X - 46;
+                        speed = 0;
+                    }
+                    else if (location.X >= w.location.X + w.bounds.Width - 8 &&
+                             location.X <= w.location.X + w.bounds.Width &&
+                             bounds.Height + location.Y > w.location.Y)
+                    {
+                        location.X = w.location.X + w.bounds.Width + 1;
+                        speed = 0;
+                    }
+                }
+            }
+        }
+        //-------------------------------
+        //| KEEP IN BOUNDS
+        //-------------------------------
+        public void KeepInBounds()
+        {
+            if (location.X <= 0)
+            {
+                location.X = 1;
+                speed = 0;
+            }
+            else if (location.X >= 1202)
+            {
+                location.X = 1200;
+                speed = 0;
+            }
         }
     }
 }

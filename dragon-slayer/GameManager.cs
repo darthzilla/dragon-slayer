@@ -108,23 +108,51 @@ namespace dragon_slayer
             switch (lvl)
             {
                 case 0:
-                    Platform first = new Platform(new Vector(480, 502), new Size(48 * pixelScale, 8 * pixelScale));
-                    Platform pFour = new Platform(new Vector(780, 502), new Size(48 * pixelScale, 8 * pixelScale));
-                    Platform pSecond = new Platform(new Vector(700, 384), new Size(16 * pixelScale, 16 * pixelScale));
-                    Platform pThird = new Platform(new Vector(300, 576), new Size(16 * pixelScale, 16 * pixelScale));
+                    Platform first = new Platform(new Vector(300, groundPoint + 24), new Size(288 * pixelScale, 8 * pixelScale));
+                    Platform pSecond = new Platform(new Vector(300 + 48, groundPoint), new Size((288-16) * pixelScale, 8 * pixelScale));
+                    Platform pThird = new Platform(new Vector(300 + 48*2, groundPoint - 24), new Size((288 - 16*2) * pixelScale, 8 * pixelScale));
+                    Platform pFour = new Platform(new Vector(300 + 48 * 3, groundPoint - 24 * 2), new Size((288 - 16 * 3) * pixelScale, 8 * pixelScale));
+                    Platform pFive = new Platform(new Vector(300 + 48 * 4, groundPoint - 24 * 3), new Size((288 - 16 * 4) * pixelScale, 8 * pixelScale));
+                    Platform pSix = new Platform(new Vector(300 + 48 * 5, groundPoint - 24 * 4), new Size((288 - 16 * 5) * pixelScale, 8 * pixelScale));
+                    Platform pSeven = new Platform(new Vector(300 + 48 * 6, groundPoint - 24 * 5), new Size((288 - 16 * 6) * pixelScale, 8 * pixelScale));
+                    Platform pEight = new Platform(new Vector(300 + 48 * 7, groundPoint - 24 * 6), new Size((288 - 16 * 7) * pixelScale, 8 * pixelScale));
+                    Platform pNine = new Platform(new Vector(300 + 48 * 8, groundPoint - 24 * 7), new Size((288 - 16 * 8) * pixelScale, 8 * pixelScale));
+                    Platform pTen = new Platform(new Vector(300 + 48 * 9, groundPoint - 24 * 8), new Size((288 - 16 * 9) * pixelScale, 8 * pixelScale));
+                    Platform pEleven = new Platform(new Vector(300 + 48 * 10, groundPoint - 24 * 9), new Size((288 - 16 * 10) * pixelScale, 8 * pixelScale));
+                    Platform pTwelve = new Platform(new Vector(300 + 48 * 11, groundPoint - 24 * 10), new Size((288 - 16 * 11) * pixelScale, 8 * pixelScale));
+                    Platform pThirteen = new Platform(new Vector(300 + 48 * 12, groundPoint - 24 * 11), new Size((288 - 16 * 12) * pixelScale, 8 * pixelScale));
+                    Platform pFourteen = new Platform(new Vector(300 + 48 * 4, groundPoint - 24 * 17), new Size((288 - 16 * 12) * pixelScale, 8 * pixelScale));
+                    Platform pFifteen = new Platform(new Vector(0, groundPoint - 24 * 14), new Size((288 - 16 * 12) * pixelScale, 8 * pixelScale));
                     platforms = new List<Platform>();
-                    platforms.Add(pSecond);
                     platforms.Add(first);
+                    platforms.Add(pSecond);
                     platforms.Add(pThird);
                     platforms.Add(pFour);
-                    
-                    Wall wFirst = new Wall(new Vector(700, 384 + unit), new Size(16 * pixelScale, 240 - unit));
-                    walls = new List<Wall>();
-                    walls.Add(wFirst);
+                    platforms.Add(pFive);
+                    platforms.Add(pSix);
+                    platforms.Add(pSeven);
+                    platforms.Add(pEight);
+                    platforms.Add(pNine);
+                    platforms.Add(pTen);
+                    platforms.Add(pEleven);
+                    platforms.Add(pTwelve);
+                    platforms.Add(pThirteen);
+                    platforms.Add(pFourteen);
+                    platforms.Add(pFifteen);
 
-                    Enemy one = new Enemy(new Vector(200, GameManager.groundPoint), Resources.cruela_l, new Size(8 * GameManager.pixelScale, 16 * GameManager.pixelScale), 10, Direction.RIGHT);
+                    //Wall wFirst = new Wall(new Vector(300 + 48 * 17, groundPoint - 24 * 10), new Size(16 * pixelScale, 288));
+                    //walls = new List<Wall>();
+                    //walls.Add(wFirst);
+
+                    Enemy one = new Enemy(new Vector(300 + 48 * 13, groundPoint - 24 * 13), Resources.cruela_l, new Size(8 * GameManager.pixelScale, 16 * GameManager.pixelScale), 10, Direction.RIGHT);
+                    Enemy two = new Enemy(new Vector(100, GameManager.groundPoint), Resources.cruela_l, new Size(8 * GameManager.pixelScale, 16 * GameManager.pixelScale), 10, Direction.RIGHT);
+                    Enemy three = new Enemy(new Vector(300 + 48 * 6, groundPoint - 24 * 19), Resources.cruela_l, new Size(8 * GameManager.pixelScale, 16 * GameManager.pixelScale), 10, Direction.RIGHT);
+                    Enemy four = new Enemy(new Vector(48, groundPoint - 24 * 16), Resources.cruela_l, new Size(8 * GameManager.pixelScale, 16 * GameManager.pixelScale), 10, Direction.RIGHT);
                     enemies = new List<Enemy>();
                     enemies.Add(one);
+                    enemies.Add(two);
+                    enemies.Add(three);
+                    enemies.Add(four);
                     return new Level(Resources.level1bg,platforms,walls,enemies);
                 case 1:
                     first = new Platform(new Vector(680, 502), new Size(48 * pixelScale, 8 * pixelScale));
@@ -141,7 +169,7 @@ namespace dragon_slayer
                     walls = new List<Wall>();
                     //walls.Add(wFirst);
                     
-                    Enemy two = new Enemy(new Vector(900, GameManager.groundPoint), Resources.cruela_l, new Size(8 * GameManager.pixelScale, 16 * GameManager.pixelScale), 10, Direction.LEFT);
+                    two = new Enemy(new Vector(900, GameManager.groundPoint), Resources.cruela_l, new Size(8 * GameManager.pixelScale, 16 * GameManager.pixelScale), 10, Direction.LEFT);
                     one = new Enemy(new Vector(200, GameManager.groundPoint), Resources.cruela_l, new Size(8 * GameManager.pixelScale, 16 * GameManager.pixelScale), 10, Direction.LEFT);
                     enemies = new List<Enemy>();
                     enemies.Add(one);

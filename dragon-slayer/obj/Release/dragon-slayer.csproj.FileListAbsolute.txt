@@ -17,3 +17,4 @@ C:\Users\Risto\Documents\GitHub\dragon-slayer\dragon-slayer\obj\Release\dragon-s
 C:\Users\Risto\Documents\GitHub\dragon-slayer\dragon-slayer\obj\Release\dragon-slayer.exe
 C:\Users\Risto\Documents\GitHub\dragon-slayer\dragon-slayer\obj\Release\dragon-slayer.pdb
 C:\Users\Risto\Documents\GitHub\dragon-slayer\dragon-slayer\obj\Release\dragon_slayer.htForm.resources
+C:\Users\Risto\Documents\GitHub\dragon-slayer\dragon-slayer\obj\Release\dragon-slayer.csprojResolveAssemblyReference.cache

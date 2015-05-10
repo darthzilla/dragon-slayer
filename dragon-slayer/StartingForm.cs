@@ -31,7 +31,7 @@ namespace dragon_slayer
 
         private void howTo_Click(object sender, EventArgs e)
         {
-            howToForm how = new howToForm();
+            htForm how = new htForm();
             how.Show();
         }
     }

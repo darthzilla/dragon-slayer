@@ -123,9 +123,29 @@ namespace dragon_slayer.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap marko_l {
+            get {
+                object obj = ResourceManager.GetObject("marko_l", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap marko_left {
             get {
                 object obj = ResourceManager.GetObject("marko_left", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap marko_r {
+            get {
+                object obj = ResourceManager.GetObject("marko_r", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using dragon_slayer.Properties;
+using System.Drawing.Drawing2D;
 
 namespace dragon_slayer
 {
@@ -20,8 +21,6 @@ namespace dragon_slayer
         public bool isMovingLeft { get; set; }
         public bool isMovingRight { get; set; }
         public bool isPlatformed { get; set; }
-        public bool isFalling { get; set; }
-        public int plColNum { get; set; }
         public Hero(Vector location, Image sprite, Size bounds, int health,Direction direction) : base(location,sprite,bounds,health,direction) 
         {
             weapon = WeaponUpdate(direction);
@@ -32,13 +31,13 @@ namespace dragon_slayer
             isMoving = false;
             isGrounded = false;
             isPlatformed = false;
-            plColNum = 0;
         }
         //-------------------------------
         //| DRAW METHOD
         //-------------------------------
         public override void Draw(Graphics g)
         {
+            g.InterpolationMode = InterpolationMode.NearestNeighbor;
             g.DrawImage(sprite,location.X,location.Y,16*GameManager.pixelScale,16*GameManager.pixelScale);
             g.DrawRectangle(new Pen(Color.Yellow), new Rectangle((int)location.X + 4*GameManager.pixelScale,(int)location.Y, bounds.Width,bounds.Height));
             if(attackState)
@@ -88,7 +87,7 @@ namespace dragon_slayer
         {
             if (!isGrounded && !isJumping)
             {
-                float newLoc = location.Y + 15 * 0.32f;
+                float newLoc = location.Y + 6 * gravity.Y * 0.32f;
                 location = new Vector(location.X, newLoc);
                 weapon = WeaponUpdate(direction);
             }
@@ -108,9 +107,9 @@ namespace dragon_slayer
         {
             if (direction == Direction.RIGHT)
             {
-                return Resources.marko;
+                return Resources.marko_r;
             }
-            else return Resources.marko_left;
+            else return Resources.marko_l;
         }
         //-------------------------------
         //| GROUND CHECK
@@ -151,7 +150,6 @@ namespace dragon_slayer
                            location.Y + 47 < p.location.Y + 47 &&
                            bounds.Height + location.Y > p.location.Y)
                     {
-                        plColNum++;
                         isPlatformed = true;
                         isGrounded = true;
                         isJumping = false;
@@ -164,7 +162,6 @@ namespace dragon_slayer
                     {
                         isPlatformed = false;
                         isGrounded = false;
-                        plColNum = 0;
                     }
                 }
             }

@@ -136,7 +136,13 @@
   <data name="marko" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\marko.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="marko_l" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marko-l.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="marko_left" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\marko-left.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marko_r" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marko-r.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -32,7 +32,7 @@ namespace dragon_slayer
         public void Draw(Graphics g)
         {
             g.DrawImageUnscaled(bg, 0, 0);
-            g.FillRectangle(new SolidBrush(Color.Red), floorBoundBox);
+            //g.FillRectangle(new SolidBrush(Color.Red), floorBoundBox); floor bounding box
             if(enemies.Count > 0)
                 foreach (Enemy fiend in enemies)
                 {

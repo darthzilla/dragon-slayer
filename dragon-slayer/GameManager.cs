@@ -31,7 +31,7 @@ namespace dragon_slayer
             Platform first = new Platform(new Vector(480, 502), new Size(48 * pixelScale, 8 * pixelScale));
             platforms.Add(first);
             level1 = new Level(Resources.level1bg,platforms);
-            marko = new Hero(new Vector(48f, 50), Resources.marko, new Size(8 * pixelScale, 16 * pixelScale), 10, Direction.RIGHT);
+            marko = new Hero(new Vector(48f, 50), Resources.marko_r, new Size(8 * pixelScale, 16 * pixelScale), 10, Direction.RIGHT);
             
         }
         public void Update()

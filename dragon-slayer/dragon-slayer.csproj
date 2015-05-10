@@ -113,6 +113,84 @@
   <ItemGroup>
     <None Include="Resources\marko-r.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marko-attack-l.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marko-attack-r.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marko-attack-r0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marko-attack-r1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marko-attack-r2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marko-attack-r3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marko-attack-r4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marko-attack-r5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marko-attack-r6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marko-attack-r7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marko-attack-l0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marko-attack-l1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marko-attack-l2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marko-attack-l3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marko-attack-l4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marko-attack-l5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marko-attack-l6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marko-attack-l7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marko-run-r0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marko-run-r1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marko-run-r2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marko-run-r3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marko-run-l0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marko-run-l1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marko-run-l2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\marko-run-l3.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

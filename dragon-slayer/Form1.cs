@@ -28,6 +28,7 @@ namespace dragon_slayer
             Width = 1264;
             Height = 759;
             gameTimer.Enabled = true;
+            animationTimer.Enabled = true;
         }
 
         private void gameTimer_Tick(object sender, EventArgs e)
@@ -37,6 +38,7 @@ namespace dragon_slayer
             {
                 gm = new GameManager();
             }
+            gm.marko.UpdateAnimState();
             Invalidate();
         }
 
@@ -89,6 +91,11 @@ namespace dragon_slayer
         {
             gm.marko.attackState = false;
             hitTimer.Enabled = false;
+        }
+
+        private void animationTimer_Tick(object sender, EventArgs e)
+        {
+            gm.Animate();
         }
     }
 }

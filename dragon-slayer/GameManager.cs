@@ -55,5 +55,9 @@ namespace dragon_slayer
             marko.Draw(g);
             
         }
+        public void Animate()
+        {
+            marko.Animate();
+        }
     }
 }

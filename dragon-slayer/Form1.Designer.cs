@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.gameTimer = new System.Windows.Forms.Timer(this.components);
             this.hitTimer = new System.Windows.Forms.Timer(this.components);
+            this.animationTimer = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
             // 
             // gameTimer
@@ -42,6 +43,11 @@
             // 
             this.hitTimer.Interval = 200;
             this.hitTimer.Tick += new System.EventHandler(this.hitTimer_Tick);
+            // 
+            // animationTimer
+            // 
+            this.animationTimer.Interval = 25;
+            this.animationTimer.Tick += new System.EventHandler(this.animationTimer_Tick);
             // 
             // Form1
             // 
@@ -62,6 +68,7 @@
 
         public System.Windows.Forms.Timer gameTimer;
         private System.Windows.Forms.Timer hitTimer;
+        public System.Windows.Forms.Timer animationTimer;
 
     }
 }

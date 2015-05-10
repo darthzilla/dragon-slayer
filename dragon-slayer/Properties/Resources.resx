@@ -136,6 +136,60 @@
   <data name="marko" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\marko.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="marko_attack_l" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marko-attack-l.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marko_attack_l0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marko-attack-l0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marko_attack_l1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marko-attack-l1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marko_attack_l2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marko-attack-l2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marko_attack_l3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marko-attack-l3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marko_attack_l4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marko-attack-l4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marko_attack_l5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marko-attack-l5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marko_attack_l6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marko-attack-l6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marko_attack_l7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marko-attack-l7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marko_attack_r" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marko-attack-r.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marko_attack_r0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marko-attack-r0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marko_attack_r1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marko-attack-r1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marko_attack_r2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marko-attack-r2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marko_attack_r3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marko-attack-r3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marko_attack_r4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marko-attack-r4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marko_attack_r5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marko-attack-r5.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marko_attack_r6" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marko-attack-r6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marko_attack_r7" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marko-attack-r7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="marko_l" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\marko-l.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -144,5 +198,29 @@
   </data>
   <data name="marko_r" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\marko-r.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marko_run_l0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marko-run-l0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marko_run_l1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marko-run-l1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marko_run_l2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marko-run-l2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marko_run_l3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marko-run-l3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marko_run_r0" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marko-run-r0.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marko_run_r1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marko-run-r1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marko_run_r2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marko-run-r2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="marko_run_r3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\marko-run-r3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

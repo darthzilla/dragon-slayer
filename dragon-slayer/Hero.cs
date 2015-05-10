@@ -21,6 +21,8 @@ namespace dragon_slayer
         public bool isMovingLeft { get; set; }
         public bool isMovingRight { get; set; }
         public bool isPlatformed { get; set; }
+        public string animState { get; set; }
+        public int currentFrame { get; set; }
         public Hero(Vector location, Image sprite, Size bounds, int health,Direction direction) : base(location,sprite,bounds,health,direction) 
         {
             weapon = WeaponUpdate(direction);
@@ -31,6 +33,8 @@ namespace dragon_slayer
             isMoving = false;
             isGrounded = false;
             isPlatformed = false;
+            animState = "idle";
+            currentFrame = 0;
         }
         //-------------------------------
         //| DRAW METHOD
@@ -39,10 +43,10 @@ namespace dragon_slayer
         {
             g.InterpolationMode = InterpolationMode.NearestNeighbor;
             g.DrawImage(sprite,location.X,location.Y,16*GameManager.pixelScale,16*GameManager.pixelScale);
-            g.DrawRectangle(new Pen(Color.Yellow), new Rectangle((int)location.X + 4*GameManager.pixelScale,(int)location.Y, bounds.Width,bounds.Height));
-            if(attackState)
-                g.DrawRectangle(new Pen(Color.Red), weapon);
-            else g.DrawRectangle(new Pen(Color.Blue), weapon);
+            //g.DrawRectangle(new Pen(Color.Yellow), new Rectangle((int)location.X + 4*GameManager.pixelScale,(int)location.Y, bounds.Width,bounds.Height));
+            //if(attackState)
+            //    g.DrawRectangle(new Pen(Color.Red), weapon);
+            //else g.DrawRectangle(new Pen(Color.Blue), weapon);
         }
         //-------------------------------
         //| MOVE METHOD
@@ -54,14 +58,12 @@ namespace dragon_slayer
                 float newLoc = location.X + speed * GameManager.pixelScale * 0.016f;
                 location = new Vector(newLoc, location.Y);
                 weapon = WeaponUpdate(direction);
-                sprite = SpriteUpdate(direction);
             }
             else if (direction == Direction.LEFT && isMoving)
             {
                 float newLoc = location.X - speed * GameManager.pixelScale * 0.016f;
                 location = new Vector(newLoc, location.Y);
                 weapon = WeaponUpdate(direction);
-                sprite = SpriteUpdate(direction);
             }
         }
         //-------------------------------
@@ -97,8 +99,8 @@ namespace dragon_slayer
         //-------------------------------
         public Rectangle WeaponUpdate(Direction direction){
             if(direction == Direction.RIGHT)
-                return new Rectangle((int)location.X + 11 * GameManager.pixelScale, (int)location.Y + 6 * GameManager.pixelScale, 10 * GameManager.pixelScale, 5 * GameManager.pixelScale);
-            else return new Rectangle((int)location.X - 5 * GameManager.pixelScale, (int)location.Y + 6 * GameManager.pixelScale, 10 * GameManager.pixelScale, 5 * GameManager.pixelScale);
+                return new Rectangle((int)location.X + 11 * GameManager.pixelScale, (int)location.Y + 6 * GameManager.pixelScale, 4 * GameManager.pixelScale, 5 * GameManager.pixelScale);
+            else return new Rectangle((int)location.X + 1 * GameManager.pixelScale, (int)location.Y + 6 * GameManager.pixelScale, 4 * GameManager.pixelScale, 5 * GameManager.pixelScale);
         }
         //-------------------------------
         //| SPRITE UPDATE METHOD
@@ -110,6 +112,144 @@ namespace dragon_slayer
                 return Resources.marko_r;
             }
             else return Resources.marko_l;
+        }
+        //-------------------------------
+        //| ANIMATE METHOD
+        //-------------------------------
+        public void UpdateAnimState()
+        {
+            if (isMoving)
+            {
+                animState = "moving";
+            }
+            else animState = "idle";
+            if (attackState)
+            {
+                animState = "attack";
+            }
+        }
+        public void Animate()
+        {
+            if (animState.Equals("idle"))
+            {
+                currentFrame = 0;
+                sprite = SpriteUpdate(direction);
+            }
+            else if (animState.Equals("moving"))
+            {
+                if (currentFrame > 3)
+                    currentFrame = 0;
+                else currentFrame++;
+                if (direction == Direction.RIGHT)
+                {
+                    switch (currentFrame)
+                    {
+                        case 0:
+                            sprite = Resources.marko_run_r0;
+                            break;
+                        case 1:
+                            sprite = Resources.marko_run_r1;
+                            break;
+                        case 2:
+                            sprite = Resources.marko_run_r2;
+                            break;
+                        case 3:
+                            sprite = Resources.marko_run_r3;
+                            break;
+                        default:
+                            sprite = Resources.marko_run_r0;
+                            break;
+                    }
+                }
+                else
+                {
+                    switch (currentFrame)
+                    {
+                        case 0:
+                            sprite = Resources.marko_run_l0;
+                            break;
+                        case 1:
+                            sprite = Resources.marko_run_l1;
+                            break;
+                        case 2:
+                            sprite = Resources.marko_run_l2;
+                            break;
+                        case 3:
+                            sprite = Resources.marko_run_l3;
+                            break;
+                        default:
+                            sprite = Resources.marko_run_l0;
+                            break;
+                    }
+                }
+            }
+            else if(animState.Equals("attack"))
+            {
+                if (currentFrame > 7)
+                    currentFrame = 0;
+                else currentFrame++;
+                if(direction == Direction.RIGHT)
+                    switch (currentFrame)
+                    {
+                        case 0:
+                            sprite = Resources.marko_attack_r0;
+                            break;
+                        case 1:
+                            sprite = Resources.marko_attack_r1;
+                            break;
+                        case 2:
+                            sprite = Resources.marko_attack_r2;
+                            break;
+                        case 3:
+                            sprite = Resources.marko_attack_r3;
+                            break;
+                        case 4:
+                            sprite = Resources.marko_attack_r4;
+                            break;
+                        case 5:
+                            sprite = Resources.marko_attack_r5;
+                            break;
+                        case 6:
+                            sprite = Resources.marko_attack_r6;
+                            break;
+                        case 7:
+                            sprite = Resources.marko_attack_r7;
+                            break;
+                        default:
+                            sprite = Resources.marko_attack_r0;
+                            break;
+                    }
+                else switch (currentFrame)
+                    {
+                        case 0:
+                            sprite = Resources.marko_attack_l0;
+                            break;
+                        case 1:
+                            sprite = Resources.marko_attack_l1;
+                            break;
+                        case 2:
+                            sprite = Resources.marko_attack_l2;
+                            break;
+                        case 3:
+                            sprite = Resources.marko_attack_l3;
+                            break;
+                        case 4:
+                            sprite = Resources.marko_attack_l4;
+                            break;
+                        case 5:
+                            sprite = Resources.marko_attack_l5;
+                            break;
+                        case 6:
+                            sprite = Resources.marko_attack_l6;
+                            break;
+                        case 7:
+                            sprite = Resources.marko_attack_l7;
+                            break;
+                        default:
+                            sprite = Resources.marko_attack_l0;
+                            break;
+                    }
+            }
         }
         //-------------------------------
         //| GROUND CHECK
